@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Element Documentation Web Component</title>
+    <style>
+      dl {
+        margin-left: 6px;
+      }
+      dt {
+        font-weight: bold;
+        color: #217ac0;
+        font-size: 110%;
+      }
+      dt {
+        font-family: Consolas, 'Liberation Mono', Courier;
+      }
+      dd {
+        margin-left: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      HTML Element Documentation - web component using
+      <code>&lt;template&gt;</code> and
+      <code>&lt;slot&gt;</code>
+    </h1>
+    <template id="element-doc-template">
+      <style>
+        details {
+          font-family: 'Open Sans Light', Helvetica, Arial;
+        }
+        .name {
+          font-weight: bold;
+          color: #217ac0;
+          font-size: 120%;
+        }
+        h4 {
+          margin: 10px 0 -8px 0;
+        }
+        h4 span {
+          background: #217ac0;
+          padding: 2px 6px 2px 6px;
+        }
+        h4 span {
+          border: 1px solid #cee9f9;
+          border-radius: 4px;
+        }
+        h4 span {
+          color: white;
+        }
+        .attributes {
+          margin-left: 22px;
+          font-size: 90%;
+        }
+        .attributes p {
+          margin-left: 16px;
+          font-style: italic;
+        }
+      </style>
+      <details>
+        <summary>
+          <span>
+            <code class="name"
+              >&lt;<slot name="element-name">ELEMENT NAME</slot></code
+            >
+            <i class="desc"><slot name="description">DESCRIPTION</slot></i>
+          </span>
+        </summary>
+        <div class="attributes">
+          <h4><span>Attributes</span></h4>
+          <slot name="attributes"><p>None</p></slot>
+        </div>
+      </details>
+      <hr />
+    </template>
+
+    <!-- Use of the custom component with named slots -->
+    <element-doc>
+      <span slot="element-name">audio</span>
+      <span slot="description"
+        >This tag is used to embed sound content in a document, such as music or
+        other audio streams. contains one or more &lt; source &gt; tags with
+        different audio sources. The browser will choose the first source it
+        supports. There are three supported audio formats in HTML: MP3, WAV, and
+        OGG.</span
+      >
+      <dl slot="attributes">
+        <dt>autoplay</dt>
+        <dd>
+          Specifies that the audio will start playing as soon as it is ready
+        </dd>
+        <dt>controls</dt>
+        <dd>
+          Specifies that audio controls should be displayed (such as a
+          play/pause button etc)
+        </dd>
+        <dt>src</dt>
+        <dd>Specifies the URL of the audio file</dd>
+        <dt>loop</dt>
+        <dd>
+          Specifies that the audio will start over again, every time it is
+          finished
+        </dd>
+      </dl>
+    </element-doc>
+
+    <element-doc>
+      <span slot="element-name">canvas</span>
+      <span slot="description"
+        >The canvas tag is used to draw graphics, on the fly, via scripting
+        (usually JavaScript). The canvas tag is transparent, and is only a
+        container for graphics, you must use a script to actually draw the
+        graphics.</span
+      >
+      <dl slot="attributes">
+        <dt>height</dt>
+        <dd>Specifies the height of the canvas. Default value is 150</dd>
+        <dt>width</dt>
+        <dd>Specifies the width of the canvas. Default value is 300</dd>
+      </dl>
+    </element-doc>
+
+    <element-doc>
+      <span slot="element-name">blockquote</span>
+      <span slot="description"
+        >The blockquote element specifies a section that is quoted from another
+        source.Browsers usually indent blockquote elements (look at example
+        below to see how to remove the indentation).</span
+      >
+    </element-doc>
+
+    <script src="main.js"></script>
+  </body>
+</html>

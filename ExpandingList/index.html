@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expanding List Web Component</title>
+    <style>
+      html {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+      }
+
+      li::before {
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.25rem;
+        content: '';
+      }
+
+      .open::before,
+      .closed::before {
+        background-size: 1rem 1rem;
+        position: relative;
+        top: 0.25rem;
+        opacity: 0.3;
+      }
+
+      .open::before {
+        background-image: url(img/down.png);
+      }
+
+      .closed::before {
+        background-image: url(img/right.png);
+      }
+
+      .closed .closed::before,
+      .closed .open::before {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Expanding list web component</h1>
+    <p>Click on the title of the list item with icon beside it to expand</p>
+    <ul is="expanding-list">
+      <li>
+        UK
+        <ul>
+          <li>
+            Yorkshire
+            <ul>
+              <li>
+                Leeds
+                <ul>
+                  <li>Train station</li>
+                  <li>Town hall</li>
+                  <li>Headrow</li>
+                </ul>
+              </li>
+              <li>Bradford</li>
+              <li>Hull</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        USA
+        <ul>
+          <li>
+            California
+            <ul>
+              <li>Los Angeles</li>
+              <li>San Francisco</li>
+              <li>Berkeley</li>
+            </ul>
+          </li>
+          <li>Nevada</li>
+          <li>Oregon</li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li>Nepal</li>
+      <li>Belarus</li>
+      <li>Espana</li>
+      <li>Francia</li>
+    </ul>
+
+    <script src="script.js"></script>
+  </body>
+</html>

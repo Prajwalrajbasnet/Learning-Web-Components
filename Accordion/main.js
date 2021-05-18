@@ -43,6 +43,11 @@ class AccordionItem extends HTMLElement {
 	connectedCallback() {
 		this.setAttribute('data-open', false);
 
+		const styles = document.querySelector('link[href*="font-awesome"]');
+		if (styles) {
+			this.shadowRoot.appendChild(styles.cloneNode());
+		}
+
 		const header = this.shadowRoot.querySelector('#header');
 		const content = this.shadowRoot.querySelector('.content');
 		const indicator = this.shadowRoot.querySelector('#indicator');

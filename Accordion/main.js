@@ -2,8 +2,12 @@ const template = document.createElement('template');
 template.innerHTML = `
   <style></style>
   <div class="accordion">
-    <div class="header"></div>
-    <div class="content">div>
+    <div class="header">
+      <slot name="header"></slot>
+    </div>
+    <div class="content">
+      <slot name="content"></slot>
+    </div>
   </div>
 `;
 

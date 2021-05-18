@@ -12,6 +12,7 @@ template.innerHTML = `
       border: 1px solid #404040;
       border-radius: 4px;
       cursor: pointer;
+      margin-bottom: 10px;
     }
     .content{
       margin-left: 20px;

@@ -14,19 +14,34 @@
     />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
-	</head>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+      }
+      .main {
+        margin-top: 20px;
+        width: 700px
+      }
+      .header-text {
+        font-weight: bold;
+      }
+    </style>
+  </head>
 	<body>
-		<accordion-item>
-			<span slot="header">Header text</span>
-			<p slot="content">
-				Nisi anim eiusmod elit laborum deserunt nisi veniam. Magna aute aliquip
-				nulla id voluptate eiusmod tempor ipsum. Aute eu consequat nisi sint
-				aliquip anim id adipisicing veniam. Ut deserunt labore laboris laboris
-				nostrud proident excepteur quis duis cillum. Dolor voluptate irure non
-				aliquip irure quis incididunt aliquip exercitation est ipsum ut irure
-				commodo.
-			</p>
-		</accordion-item>
+    <div class="main">
+      <collapsible-accordion>
+        <span slot="header" class="header-text">Header text</span>
+        <p slot="content">
+          Nisi anim eiusmod elit laborum deserunt nisi veniam. Magna aute aliquip
+          nulla id voluptate eiusmod tempor ipsum. Aute eu consequat nisi sint
+          aliquip anim id adipisicing veniam. Ut deserunt labore laboris laboris
+          nostrud proident excepteur quis duis cillum. Dolor voluptate irure non
+          aliquip irure quis incididunt aliquip exercitation est ipsum ut irure
+          commodo.
+        </p>
+      </collapsible-accordion>
+    </div>
 		<script src="./main.js"></script>
 	</body>
 </html>

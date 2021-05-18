@@ -32,7 +32,7 @@ template.innerHTML = `
   </div>
 `;
 
-class AccordionItem extends HTMLElement {
+class CollapsibleAccordion extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' }).appendChild(
@@ -64,4 +64,4 @@ class AccordionItem extends HTMLElement {
 		});
 	}
 }
-customElements.define('accordion-item', AccordionItem);
+customElements.define('collapsible-accordion', CollapsibleAccordion);
